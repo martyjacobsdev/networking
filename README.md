@@ -1,5 +1,5 @@
 # Networking
-Adhoc scripts 
+Adhoc scripts:
 
 webget - an implementation of the Linux utility "wget"
 
