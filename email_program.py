@@ -8,8 +8,6 @@ org_stdout = sys.stdout
 file = open("smtplog.txt", "w")
 sys.stdout = file
 
-print("Martin Jacobs - s4304939 \r\n")
-
 #message details and mail server addr/port number
 msg = "\r\n Welcome"
 end_msg = "\r\n.\r\n"

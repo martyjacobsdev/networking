@@ -1,7 +1,5 @@
 #!/usr/bin/python
 
-#Martin Jacobs - s4304939 - COMS3200 Assignment 2 Part C
-# import modules used
 import sys, argparse,os, ftplib, httplib
 from urlparse import urlparse
 from ftplib import FTP
