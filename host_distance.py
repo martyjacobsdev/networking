@@ -13,7 +13,7 @@ host = raw_input("Enter a hostname: ")
 try:
     target_ip = socket.gethostbyname(host)
 except:
-    print "Please check the hostname provided."
+    print 'Please check the hostname provided.'
 
 my_ip = urlopen('http://ip.42.pl/raw').read()
 target_ip_lat_lng = [0,0]
@@ -24,6 +24,7 @@ def get_target_latlng():
     url = 'http://freegeoip.net/json/' + target_ip 
     response = urllib2.urlopen(url).read()
     data = json.loads(response)
+    print '\nHost location: ' + data['region_name'] + ', ' + data['city'] + '.'
     target_ip_lat_lng[0] = data['latitude']
     target_ip_lat_lng[1] = data['longitude']
 
@@ -49,10 +50,11 @@ def calculate_distance(lon1, lat1, lon2, lat2):
 
 def print_result():
 
-    print "\nThe distance between your machine " + "and the target machine " +  "is approximately: \n" + str(calculate_distance(my_lat_lng[1], my_lat_lng[0], target_ip_lat_lng[1], target_ip_lat_lng[0])) + " kilometres."
-        
-if __name__ == "__main__":
+    print '\nThe distance between your machine ' + 'and the target machine ' +  'is approximately: \n' + str(calculate_distance(my_lat_lng[1], my_lat_lng[0], target_ip_lat_lng[1], target_ip_lat_lng[0])) + ' kilometres.'
+    
 
+if __name__ == "__main__":
+    
     get_target_latlng()
     get_my_latlng()
     print_result() 
