@@ -20,13 +20,28 @@ for hit in soup.findAll('div',attrs={'class' : 'def-content'}):
     text = pprint.pformat(text)
     hits.append(text)
 
+
+print "\n Definitions -  \n"
+
 for i in hits:
-    if i == "''":
-        hits.remove(i)
     if i == "'('":
-        hits.remove(i)
+        continue #i = i.replace("(", "")
+    if i == "''":
+        continue #i = i.replace("''", '')
+    print "\n" + pprint.pformat(i)
 
-for i in hits:
-    print pprint.pformat(i)
 
-#to be continued...
+prompt = raw_input("\n Synonyms? Please enter y/n: ")
+
+if prompt == 'n':
+    exit()
+
+thesaurus_url = 'http://www.thesaurus.com/browse/' + word
+
+soup_two = BeautifulSoup(urllib2.urlopen(thesaurus_url).read())
+for hit in soup_two.findAll('span', attrs={'class' : 'text'}):
+    text = str(hit.contents[0].strip())
+    text = pprint.pformat(text)
+    hits.append(text)
+    print '\n' + text 
+
