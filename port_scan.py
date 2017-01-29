@@ -1,7 +1,7 @@
 #!/usr/bin/python
 
 ################
-# Port Scanner - Multi-threading approach
+# Port Scanner - A Multi-threaded approach
 # Scans well-known system ports and returns if they are open or closed.
 # To increase performance of scanning, adjust delay where necessary.
 ################

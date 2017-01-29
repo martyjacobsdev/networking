@@ -1,5 +1,11 @@
 #!/usr/bin/python
 
+################
+# Web get 
+# A utility that works in similar fashion to the Linux tool 'wget'.
+# It makes use of ftp and http to 'get' data.
+################
+
 import sys, argparse,os, ftplib, httplib
 from urlparse import urlparse
 from ftplib import FTP

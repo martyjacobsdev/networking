@@ -3,6 +3,12 @@ import base64
 import time
 import sys
 
+################
+# Email Program
+# Simple utility to send an email via SMTP
+################
+
+
 #initialise file for writing
 org_stdout = sys.stdout
 file = open("smtplog.txt", "w")
