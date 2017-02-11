@@ -10,3 +10,5 @@ port_scan - a lightweight port scanner that checks for open ports between the ra
 word_finder - a dictionary/thesaurus tool for faster word lookups 
 
 host_distance - a utility script to find the physical distance between two host machines by using haversine formula
+
+capture_history - captures browsing history and logs the requested URI to a txt file
