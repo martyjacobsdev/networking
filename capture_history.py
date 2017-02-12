@@ -44,7 +44,7 @@ def capture():
         # Print out the info
         request = HTTPRequest(req)
         logging.basicConfig(filename='history.log', level=logging.INFO)
-        logging.info(request.headers['host'] + request.path)
+        logging.info(request.path)
 
 if __name__ == "__main__":
     capture()
