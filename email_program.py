@@ -17,7 +17,7 @@ sys.stdout = file
 #message details and mail server addr/port number
 msg = "\r\n Welcome"
 end_msg = "\r\n.\r\n"
-mail_server = ("smtp.uq.edu.au", 25)
+mail_server = ("ENTER MAIL SERVER HERE", 25)
 
 #creating socket on client side and establishing connection
 #to server socket.
@@ -31,7 +31,7 @@ if recv[:3] != '220':
     print('220 reply not received from server.')
 
 #send encoded helo command from client to server
-helo = 'HELO smtp.uq.edu.au\r\n'
+helo = 'HELO <ENTER MAIL SERVER HERE>\r\n'
 client_socket.send(helo.encode())
 print("TX> " + helo);
 
@@ -44,7 +44,7 @@ if recv1[:3] != '250':
     print('TX> 250 reply not received from server.')
 
 #sending MAIL FROM command to server (sender details)
-mail_from = "MAIL FROM:<martin.jacobs@uq.net.au>\r\n"
+mail_from = "MAIL FROM:<EMAIL ADDRESS HERE>\r\n"
 client_socket.send(mail_from.encode())
 print("TX> " + mail_from)
 recv2 = client_socket.recv(1024)
@@ -55,7 +55,7 @@ if recv2[:3] != '250':
     print('TX> 250 reply not received from server.')
 
 #sending RCPT TO command to server (receiver details)
-rcpt_to = "RCPT TO:<martin.jacobs@uq.net.au>\r\n"
+rcpt_to = "RCPT TO:<EMAIL ADDRESS HERE>\r\n"
 client_socket.send(rcpt_to.encode())
 print("TX> " + rcpt_to)
 recv3 = client_socket.recv(1024)
@@ -77,7 +77,7 @@ if recv4[:3] != '354':
     print('354 reply not received from server.')
 
 #message contents
-subject = "Subject: Testing For Assignment 1\r\n\r\n"
+subject = "Subject: Test\r\n\r\n"
 client_socket.send(subject.encode())
 
 print("TX> " + subject)

@@ -21,7 +21,7 @@ def main(args):
   if(o.scheme == 'ftp'):
 	  try:
 	    ftp = FTP(o.netloc)
-	    ftp.login("anonymous","coms3200@uq.edu.au")
+	    ftp.login("anonymous","")
             ftp.set_pasv(True)
 	    local_filename = os.getcwd()+"/" + str(o.path).split('/')[-1]
 	    ftp_file = open(local_filename, 'wb')
